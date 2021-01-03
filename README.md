@@ -1,2 +1,3 @@
 # Industrial-Heat-Transfer-Predictor
-Este projeto tem por objetivo o desenvolvimento de uma RNA capaz de apresentar como resultado um aproximador de funções para dados de entrada que são sinais térmicos obtidos de um modelo matemático inverso que representa um processo térmico que considera acúmulo térmico, convecção e radiação e assim suavizar os ruídos inerente destes sinais e que são amplificados devido ao modelo matemático inverso se comportar como um filtro passa-alta.
+Este projeto tem por objetivo o desenvolvimento de uma RNA capaz de apresentar como resultado um aproximador de funções para sinais térmicos obtidos de um modelo matemático inverso representativo de um processo térmico o qual considera acúmulo térmico, convecção e radiação e assim suavizar os ruídos inerente destes sinais amplificados (devido ao modelo matemático inverso se comportar como um filtro passa-alta).
+
