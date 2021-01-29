@@ -49,24 +49,24 @@ def model_tester(X, y, hl):
 #500 --> 2000
 
 hl = np.arange(10, 100, 10)
-modelos = []
+Best = []
 
 for i in hl:
     for p in hl:
-        Net = model_tester(X, y, (i,p,))[0]
-        Tind = model_tester(X, y, (i,p,))[1]
-        Tproc = model_tester(X, y, (i,p,))[2]
+        
         Error = model_tester(X, y, (i,p,))[3]
         
-        modelos.append(model_tester(X, y, (i,p)))
-        
         if Error < 0.4:
-            fig = plt.figure()
-            Tind.iloc[0, :].plot(color = 'r', label = 'Tind')
-            Tproc.iloc[17, :].plot(color = 'b', label = 'Tproc')
-            plt.plot(np.arange(0,1024), Net[0,:], 'g', label = 'Net')
-            title = 'Hidden Layer Sizes --> {}  {}  Error --> {}'.format(i, p,  Error)
-            fig.suptitle(title)
+            #Save Net
+            Best.append(model_tester(X, y, (i,p)))
+            
+            
+            # fig = plt.figure()
+            # Tind.iloc[0, :].plot(color = 'r', label = 'Tind')
+            # Tproc.iloc[17, :].plot(color = 'b', label = 'Tproc')
+            # plt.plot(np.arange(0,1024), Net[0,:], 'g', label = 'Net')
+            # title = 'Hidden Layer Sizes --> {}  {}  Error --> {}'.format(i, p,  Error)
+            # fig.suptitle(title)
    
 
 
