@@ -48,7 +48,7 @@ def model_tester(X, y, hl):
 #hidden layer sizes
 #500 --> 2000
 
-hl = np.arange(10, 1000, 20)
+hl = np.arange(10, 100, 10)
 modelos = []
 
 for i in hl:
@@ -58,7 +58,7 @@ for i in hl:
         Tproc = model_tester(X, y, (i,p,))[2]
         Error = model_tester(X, y, (i,p,))[3]
         
-        modelos.append(model_tester(X, y, (i,)))
+        modelos.append(model_tester(X, y, (i,p)))
         
         if Error < 0.4:
             fig = plt.figure()

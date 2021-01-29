@@ -12,14 +12,16 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 
 
-semruido = sorted(glob('C:/Users/gabr8/Downloads/ML stuff/drive-download-20210108T200102Z-002/Sinais 05-11-2019/Quadrada/quad_*.lvm'))
+##MUDAR DIRETÓRIO
+
+semruido = sorted(glob('C:/Users/Juliana/Documents/Gabriel A. N. S. Costa/drive-download-20210128T201010Z-001/Sinais 05-11-2019/Quadrada/quad_*.lvm'))
 
 #Merging files into one single dataframe
 #FIGURE OUT A WAY TO TRANSPOSE THE FEATURE COLUMNS 3 COLUMNS --->ONE ROW
 
 #names = ['Tproc', 'Tind', 'Trec', 'Tind-1', 'Tinf', 'Tau', 'Gama', 'Deltat']
 
-Tind = pd.concat((pd.read_csv('C:/Users/gabr8/Downloads/ML stuff/drive-download-20210108T200102Z-002/Sinais 05-11-2019/Quadrada/quad_3.lvm', encoding ='latin1', sep="\s+", index_col= None, header = None, usecols = [2]).assign(filename = file) for file in semruido), ignore_index=False, axis = 1)
+Tind = pd.concat((pd.read_csv(file , encoding ='latin1', sep="\s+", index_col= None, header = None, usecols = [2]).assign(filename = file) for file in semruido), ignore_index=False, axis = 1)
 Tind = Tind.drop(columns = ['filename'], axis = 0).T
 Tind.reset_index(inplace = True, drop =True)
 
@@ -27,7 +29,7 @@ Tind.reset_index(inplace = True, drop =True)
 # Gama = Gama.drop(columns = ['filename'], axis = 0).T
 # Gama.reset_index(inplace = True, drop =True)
 
-Tproc = pd.concat((pd.read_csv('C:/Users/gabr8/Downloads/ML stuff/drive-download-20210108T200102Z-002/Sinais 05-11-2019/Quadrada/quad_3.lvm', encoding ='latin1', sep="\s+", index_col= None, header = None, usecols = [1]).assign(filename = file) for file in semruido), ignore_index=False, axis = 1)
+Tproc = pd.concat((pd.read_csv(file, encoding ='latin1', sep="\s+", index_col= None, header = None, usecols = [1]).assign(filename = file) for file in semruido), ignore_index=False, axis = 1)
 Tproc = Tproc.drop(columns = ['filename'], axis = 0).T
 Tproc.reset_index(inplace = True, drop =True)
 
