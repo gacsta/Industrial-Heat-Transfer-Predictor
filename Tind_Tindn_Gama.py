@@ -14,7 +14,7 @@ from sklearn.preprocessing import StandardScaler
 
 ##MUDAR DIRETÓRIO
 
-semruido = sorted(glob('C:/Users/Juliana/Documents/Gabriel A. N. S. Costa/drive-download-20210128T201010Z-001/Sinais 05-11-2019/Quadrada/quad_*.lvm'))
+semruido = sorted(glob('Sinais 05-11-2019-20210129T192834Z-001/Sinais 05-11-2019/Quadrada/quad_*.lvm'))
 
 #Merging files into one single dataframe
 #FIGURE OUT A WAY TO TRANSPOSE THE FEATURE COLUMNS 3 COLUMNS --->ONE ROW
