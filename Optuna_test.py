@@ -6,11 +6,9 @@ Created on Sat Feb  6 17:51:22 2021
 """
 
 import pandas as pd
-import numpy as np
 
 #Models
 from sklearn.neural_network import MLPRegressor
-from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import cross_val_predict
 
@@ -41,7 +39,7 @@ def objective(trial):
                                       hidden_layer_sizes = MLP_hl, 
                                       learning_rate_init = MLP_learning_rate,
                                       momentum = MLP_momentum,
-                                      activation = MLP_activation
+                                      activation = MLP_activation,
                                       solver = MLP_solver
                                       )
          
@@ -56,6 +54,7 @@ def objective(trial):
 study = optuna.create_study(direction='minimize')
 study.optimize(objective, n_trials=None)
 Best = study.best_trial
+Best_params = study.best_params
 
 
 # # ----> NEEDS ADAPTATION TO PIPELINE STRUCTURE <----
