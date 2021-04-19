@@ -17,7 +17,7 @@ from sklearn.model_selection import cross_val_predict
 import optuna
 
 #GET_DATA_FROM
-from Tind_Tindn_Gama import *
+from Reader_Sinais_mCHea.py import *
 
 # #Splitting the data (Without K-fold cross val)
 # X_train, X_val, y_train, y_val = train_test_split(X, y, train_size = 0.7, test_size = 0.3, random_state = 0)
