@@ -12,8 +12,6 @@ from sklearn.neural_network import MLPRegressor
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import cross_val_predict
 
-#Pipelines
-# from sklearn.pipeline import 
 
 #Hyperparameter Optmization
 import optuna
@@ -23,6 +21,10 @@ from Tind_Tindn_Gama import *
 
 # #Splitting the data (Without K-fold cross val)
 # X_train, X_val, y_train, y_val = train_test_split(X, y, train_size = 0.7, test_size = 0.3, random_state = 0)
+
+
+
+###ADAM SOLVER
 
 
 # 1. Define an objective function to be maximized.
