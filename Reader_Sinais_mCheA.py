@@ -77,12 +77,21 @@ A.reset_index(inplace = True, drop =True)
 X = pd.concat([Tind, Tind0, m, h, e, A], axis = 1)
 X.columns = ['Tind', 'Tind0', 'm', 'h', 'e', 'A']
 y = Tproc
+y.columns = ['Tproc']
+
 
 
 
 #SCALE DATA
 scaler = MinMaxScaler()
-X = scaler.fit_transform(X)
+X = pd.DataFrame(scaler.fit_transform(X.values), columns = X.columns)
 
 #TEST SPLIT
 X, X_test, y , y_test = train_test_split(X, y, train_size = 0.7, test_size = 0.3, random_state = 0)
+
+X.reset_index(inplace = True, drop =True)
+y.reset_index(inplace = True, drop =True)
+
+X_test.reset_index(inplace = True, drop =True)
+y_test.reset_index(inplace = True, drop =True)
+
