@@ -19,8 +19,8 @@ import optuna
 #GET_DATA_FROM
 from Tind_Tindn_Gama import *
 
-# #Splitting the data (Without K-fold cross val)
-# X_train, X_val, y_train, y_val = train_test_split(X, y, train_size = 0.7, test_size = 0.3, random_state = 0)
+#Splitting the data (Without K-fold cross val)
+X_train, X_val, y_train, y_val = train_test_split(X, y, train_size = 0.7, test_size = 0.3, random_state = 0)
 
 
 
@@ -44,11 +44,15 @@ def objective(trial):
                                       momentum = MLP_momentum,
                                       activation = MLP_activation,
                                       solver = 'sgd'
-                                      )
+                                      ).fit(X_train, y_train)
+        
+        net = classifier_obj.predict(X_val)
          
-        #K-fold Cross Validation
-        Errors = -1*cross_val_score(classifier_obj, X, y, n_jobs = -1 , cv = 5, scoring = 'neg_mean_absolute_error')
-        accuracy = Errors.mean()
+        accuracy = classifier_obj.score(net, y_val)
+        
+        # #K-fold Cross Validation
+        # Errors = -1*cross_val_score(classifier_obj, X, y, n_jobs = -1 , cv = 5, scoring = 'neg_mean_absolute_error')
+        # accuracy = Errors.mean()
         
 
         return accuracy
