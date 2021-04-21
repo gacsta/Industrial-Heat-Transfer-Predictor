@@ -15,9 +15,9 @@ import numpy as np
 #datascaling
 from sklearn.preprocessing import MinMaxScaler
 
-pastas = sorted(glob(r'C:\Users\Juliana\Documents\Gabriel A. N. S. Costa\Github\Industrial-Heat-Transfer-Predictor\Sinais 05-11-2019-20210129T210817Z-001\Quadrada-20210416T173822Z-001\Quadrada\Quadrada 0.01\C*'))
+pastas = sorted(glob(r'C:\Users\Unesp\Documents\GitHub\Industrial-Heat-Transfer-Predictor\Quadrada-20210420T195112Z-001\Quadrada\Quadrada 0.01\C*'))
 
-parametrosPath = r'C:\Users\Juliana\Documents\Gabriel A. N. S. Costa\Github\Industrial-Heat-Transfer-Predictor\Sinais 05-11-2019-20210129T210817Z-001\Read-me Quadrada 0.01'
+parametrosPath = r'C:\Users\Unesp\Documents\GitHub\Industrial-Heat-Transfer-Predictor\Quadrada-20210420T195112Z-001\Quadrada\Quadrada 0.01\Read-me Quadrada 0.01'
 
 sinais = []
 parametros = pd.read_csv(parametrosPath, sep="=|\s+")
@@ -76,8 +76,8 @@ A.reset_index(inplace = True, drop =True)
 
 X = pd.concat([Tind, Tind0, m, h, e, A], axis = 1)
 X.columns = ['Tind', 'Tind0', 'm', 'h', 'e', 'A']
-y = Tproc
-y.columns = ['Tproc']
+y = Tproc[1]
+
 
 
 
