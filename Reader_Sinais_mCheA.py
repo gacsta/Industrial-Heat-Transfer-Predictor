@@ -79,15 +79,12 @@ X.columns = ['Tind', 'Tind0', 'm', 'h', 'e', 'A']
 y = Tproc[1]
 
 
-
-
-
 #SCALE DATA
 scaler = MinMaxScaler()
 X = pd.DataFrame(scaler.fit_transform(X.values), columns = X.columns)
 
 #TEST SPLIT
-X, X_test, y , y_test = train_test_split(X, y, train_size = 0.7, test_size = 0.3, random_state = 0)
+X, X_test, y , y_test = train_test_split(X, y, train_size = 0.85, test_size = 0.15, random_state = 0, shuffle = False)
 
 X.reset_index(inplace = True, drop =True)
 y.reset_index(inplace = True, drop =True)
