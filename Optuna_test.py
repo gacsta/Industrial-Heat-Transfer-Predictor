@@ -5,22 +5,23 @@ Created on Sat Feb  6 17:51:22 2021
 @author: gabr8
 """
 
-import pandas as pd
+# import pandas as pd
 
 #Models
 from sklearn.neural_network import MLPRegressor
-from sklearn.model_selection import cross_val_score
-from sklearn.model_selection import cross_val_predict
+# from sklearn.model_selection import cross_val_score
+# from sklearn.model_selection import cross_val_predict
+from sklearn.model_selection import train_test_split
 
 
 #Hyperparameter Optmization
 import optuna
 
 #GET_DATA_FROM
-from Reader_Sinais_mCheA import *
+import Reader_Sinais_mCheA as rs
 
 #Splitting the data (Without K-fold cross val)
-X_train, X_val, y_train, y_val = train_test_split(X, y, train_size = 0.7, test_size = 0.3, random_state = 0)
+X_train, X_val, y_train, y_val = train_test_split(rs.X, rs.y, train_size = 0.7, test_size = 0.3, random_state = 0)
 
 
 
@@ -46,12 +47,11 @@ def objective(trial):
                                       beta_1 = MLP_beta_1,
                                       beta_2 = MLP_beta_2,
                                       epsilon = MLP_epsilon,
+                                      alpha = MLP_alpha,
                                       solver = 'adam'
-                                      ).fit(X_train, y_train.values.ravel())
+                                      ).fit(X_train, y_train)
         
-        net = classifier_obj.predict(X_val)
-        
-        accuracy = classifier_obj.score(net, y_val)
+        accuracy = classifier_obj.score(X_val, y_val)
          
         # #K-fold Cross Validation
         # Errors = -1*cross_val_score(classifier_obj, X, y, n_jobs = -1 , cv = 5, scoring = 'neg_mean_absolute_error')
