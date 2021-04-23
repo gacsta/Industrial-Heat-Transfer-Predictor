@@ -1,0 +1,181 @@
+Referências dos bancos de dados
+
+Nome da pasta dá o Formato do sinal + ruído: quadrada 0.02
+
+Dados salvos por coluna
+Tproc
+Tind
+Trec
+Tind (uma posição atrás, n-1)
+Tinf
+Tau
+Gama
+dt
+
+Frequência de 10 a 100 (passo 10)
+Amplitude de 10 a 100 (passo 10)
+Ruído fixo 0.02
+
+Cada C# é um conjunto de dados com 100 sinais, todos os conjuntos formam um Banco de dados com 2700 para serem apresentados a rede
+
+Conjunto 1:
+M=4.7E-6
+A=3,14E-6
+h=550
+e=0
+
+Conjunto 2:
+M=4.7E-6
+A=3,14E-6
+h=550
+e=0.5
+
+Conjunto 3:
+M=4.7E-6
+A=3,14E-6
+h=550
+e=1
+
+Conjunto 4:
+M=4.7E-6
+A=3,14E-6
+h=5500
+e=0
+
+Conjunto 5:
+M=4.7E-6
+A=3,14E-6
+h=5500
+e=0.5
+
+Conjunto 6:
+M=4.7E-6
+A=3,14E-6
+h=5500
+e=1
+
+Conjunto 7:
+M=4.7E-6
+A=3,14E-6
+h=55000
+e=0
+
+Conjunto 8:
+M=4.7E-6
+A=3,14E-6
+h=55000
+e=0.5
+
+Conjunto 9:
+M=4.7E-6
+A=3,14E-6
+h=55000
+e=1
+
+Conjunto 10:
+M=9.4E-6
+A=6.28E-6
+h=550
+e=0
+
+Conjunto 11:
+M=9.4E-6
+A=6.28E-6
+h=550
+e=0.5
+
+Conjunto 12:
+M=9.4E-6
+A=6.28E-6
+h=550
+e=1
+
+Conjunto 13:
+M=9.4E-6
+A=6.28E-6
+h=5500
+e=0
+
+Conjunto 14:
+M=9.4E-6
+A=6.28E-6
+h=5500
+e=0.5
+
+Conjunto 15:
+M=9.4E-6
+A=6.28E-6
+h=5500
+e=1
+
+Conjunto 16:
+M=9.4E-6
+A=6.28E-6
+h=55000
+e=0
+
+Conjunto 17:
+M=9.4E-6
+A=6.28E-6
+h=55000
+e=0.5
+
+Conjunto 18:
+M=9.4E-6
+A=6.28E-6
+h=55000
+e=1
+
+Conjunto 19:
+M=1.88E-5
+A=1.256E-5
+h=550
+e=0
+
+Conjunto 20:
+M=1.88E-5
+A=1.256E-5
+h=550
+e=0.5
+
+Conjunto 21:
+M=1.88E-5
+A=1.256E-5
+h=550
+e=1
+
+Conjunto 22:
+M=1.88E-5
+A=1.256E-5
+h=5500
+e=0
+
+Conjunto 23:
+M=1.88E-5
+A=1.256E-5
+h=5500
+e=0.5
+
+Conjunto 24:
+M=1.88E-5
+A=1.256E-5
+h=5500
+e=1
+
+Conjunto 25:
+M=1.88E-5
+A=1.256E-5
+h=55000
+e=0
+
+Conjunto 26:
+M=1.88E-5
+A=1.256E-5
+h=55000
+e=0.5
+
+Conjunto 27:
+M=1.88E-5
+A=1.256E-5
+h=55000
+e=1
