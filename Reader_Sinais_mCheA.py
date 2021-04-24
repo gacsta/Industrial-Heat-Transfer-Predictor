@@ -76,15 +76,15 @@ scaler = MinMaxScaler()
 X = pd.DataFrame(scaler.fit_transform(X.values), columns = X.columns)
 
 #TEST SPLIT
-X, X_test, y , y_test = train_test_split(X, y, train_size = 0.85, test_size = 0.15, random_state = 0, shuffle = False)
+X, X_test, y , y_test = train_test_split(X, y, train_size = 0.80, test_size = 0.2, random_state = 0, shuffle = False)
 
 #Splitting the data (Without K-fold cross val)
 X_train, X_val, y_train, y_val = train_test_split(X, y, train_size = 0.7, test_size = 0.3, random_state = 0)
 
 
-X.reset_index(inplace = True, drop =True)
-y.reset_index(inplace = True, drop =True)
+X_train = X_train.reset_index(drop = True)
+y_train = y_train.reset_index(drop = True)
 
-X_test.reset_index(inplace = True, drop =True)
-y_test.reset_index(inplace = True, drop =True)
+X_val = X_val.reset_index(drop = True)
+y_val = y_val.reset_index(drop = True)
 
