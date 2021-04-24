@@ -9,7 +9,6 @@ Created on Sat Feb  6 17:51:22 2021
 from sklearn.neural_network import MLPRegressor
 # from sklearn.model_selection import cross_val_score
 # from sklearn.model_selection import cross_val_predict
-from sklearn.model_selection import train_test_split
 
 
 #Hyperparameter Optmization
@@ -17,10 +16,6 @@ import optuna
 
 #GET_DATA_FROM
 import Reader_Sinais_mCheA as rs 
-
-#Splitting the data (Without K-fold cross val)
-X_train, X_val, y_train, y_val = train_test_split(rs.X, rs.y, train_size = 0.7, test_size = 0.3, random_state = 0)
-
 
 
 ###SGD SOLVER
@@ -45,10 +40,10 @@ def objective(trial):
                                       activation = MLP_activation,
                                       alpha = MLP_alpha,
                                       solver = 'sgd'
-                                      ).fit(X_train, y_train)
+                                      ).fit(rs.X_train, rs.y_train)
         
        
-        accuracy = classifier_obj.score(X_val, y_val)
+        accuracy = classifier_obj.score(rs.X_val, rs.y_val)
         
         # #K-fold Cross Validation
         # Errors = -1*cross_val_score(classifier_obj, X, y, n_jobs = -1 , cv = 5, scoring = 'neg_mean_absolute_error')
