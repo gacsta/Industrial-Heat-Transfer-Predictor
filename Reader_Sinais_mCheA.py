@@ -15,9 +15,9 @@ import numpy as np
 #datascaling
 from sklearn.preprocessing import MinMaxScaler
 
-pastas = sorted(glob(r'C:\Users\Juliana\Documents\Gabriel A. N. S. Costa\Github\Industrial-Heat-Transfer-Predictor\Sinais 05-11-2019-20210129T210817Z-001\Quadrada-20210416T173822Z-001\Quadrada\Quadrada 0.01\C*'))
+pastas = sorted(glob(r'C:\Users\Unesp-025536\Documents\GitHub\Industrial-Heat-Transfer-Predictor\Quadrada\Quadrada 0.02\C*'))
 
-parametrosPath = r'C:\Users\Juliana\Documents\Gabriel A. N. S. Costa\Github\Industrial-Heat-Transfer-Predictor\Sinais 05-11-2019-20210129T210817Z-001\Read-me Quadrada 0.01'
+parametrosPath = r'C:\Users\Unesp-025536\Documents\GitHub\Industrial-Heat-Transfer-Predictor\Quadrada\Quadrada 0.01\Read-me Quadrada 0.01'
 
 sinais = []
 parametros = pd.read_csv(parametrosPath, sep="=|\s+")
@@ -76,8 +76,8 @@ A.reset_index(inplace = True, drop =True)
 
 X = pd.concat([Tind, Tind0, m, h, e, A], axis = 1)
 X.columns = ['Tind', 'Tind0', 'm', 'h', 'e', 'A']
-y = Tproc
-y.columns = ['Tproc']
+y = Tproc[1]
+
 
 
 
@@ -87,7 +87,7 @@ scaler = MinMaxScaler()
 X = pd.DataFrame(scaler.fit_transform(X.values), columns = X.columns)
 
 #TEST SPLIT
-X, X_test, y , y_test = train_test_split(X, y, train_size = 0.7, test_size = 0.3, random_state = 0)
+X, X_test, y , y_test = train_test_split(X, y, train_size = 0.6, test_size = 0.4, random_state = 0, shuffle = False)
 
 X.reset_index(inplace = True, drop =True)
 y.reset_index(inplace = True, drop =True)

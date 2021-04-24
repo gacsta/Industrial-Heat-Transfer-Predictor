@@ -11,16 +11,17 @@ import pandas as pd
 from sklearn.neural_network import MLPRegressor
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import cross_val_predict
+from sklearn.model_selection import train_test_split
 
 
 #Hyperparameter Optmization
 import optuna
 
 #GET_DATA_FROM
-from Tind_Tindn_Gama import *
+import Reader_Sinais_mCheA as rs
 
 #Splitting the data (Without K-fold cross val)
-X_train, X_val, y_train, y_val = train_test_split(X, y, train_size = 0.7, test_size = 0.3, random_state = 0)
+X_train, X_val, y_train, y_val = train_test_split(rs.X, rs.y, train_size = 0.65, test_size = 0.35, random_state = 0)
 
 
 
@@ -38,13 +39,12 @@ def objective(trial):
         classifier_obj = MLPRegressor(random_state=0, max_iter=1000,
                                       hidden_layer_sizes = (MLP_hl,),                                     
                                       activation = MLP_activation,
-                                      
+                                      alpha = MLP_alpha,
                                       solver = 'lbfgs'
                                       ).fit(X_train,y_train)
         
-        net = classifier_obj.predict(X_val)
-        
-        accuracy = classifier_obj.score(net, y_val)
+  
+        accuracy = classifier_obj.score(X_val ,y_val)
          
         # #K-fold Cross Validation
         # Errors = -1*cross_val_score(classifier_obj, X, y, n_jobs = -1 , cv = 5, scoring = 'neg_mean_absolute_error')
