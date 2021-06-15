@@ -1,0 +1,6 @@
+[0426/181544.375:ERROR:file_io_win.cc(244)] SetEndOfFile: A operação solicitada não pode ser executada em um arquivo com uma seção mapeada pelo usuário aberta. (0x4C8)
+[0426/181544.382:ERROR:file_io_win.cc(244)] SetEndOfFile: A operação solicitada não pode ser executada em um arquivo com uma seção mapeada pelo usuário aberta. (0x4C8)
+[0426/181544.383:ERROR:file_io_win.cc(244)] SetEndOfFile: A operação solicitada não pode ser executada em um arquivo com uma seção mapeada pelo usuário aberta. (0x4C8)
+[0426/181544.385:ERROR:file_io_win.cc(244)] SetEndOfFile: A operação solicitada não pode ser executada em um arquivo com uma seção mapeada pelo usuário aberta. (0x4C8)
+[0426/181545.091:ERROR:file_io_win.cc(244)] SetEndOfFile: A operação solicitada não pode ser executada em um arquivo com uma seção mapeada pelo usuário aberta. (0x4C8)
+[0426/181545.612:ERROR:file_io_win.cc(244)] SetEndOfFile: A operação solicitada não pode ser executada em um arquivo com uma seção mapeada pelo usuário aberta. (0x4C8)
